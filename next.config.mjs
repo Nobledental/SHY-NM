@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/SHY-NM',
-  assetPrefix: '/SHY-NM', // This forces CSS/JS to load from the correct folder
+  basePath: '/SHY-NM', 
+  // REMOVED assetPrefix: '/SHY-NM'
   images: {
     unoptimized: true,
   },
