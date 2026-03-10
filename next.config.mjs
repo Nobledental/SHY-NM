@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  // This tells Next.js that the site is in a subfolder named /SHY-NM
-  basePath: '/SHY-NM', 
+  basePath: '/SHY-NM',
+  assetPrefix: '/SHY-NM', // This forces CSS/JS to load from the correct folder
   images: {
     unoptimized: true,
   },
