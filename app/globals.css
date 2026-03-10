@@ -4,15 +4,9 @@
 
 :root {
   --brand-blue: #13659a;
-  --brand-red: #ce142a;
 }
 
 body {
-  @apply bg-slate-50 text-slate-900 overflow-x-hidden;
-}
-
-/* Custom Animation for the Shield */
-.shield-glow {
-  box-shadow: 0 0 20px rgba(19, 101, 154, 0.2);
-  border: 1px solid rgba(19, 101, 154, 0.3);
+  background: white;
+  color: #0f172a;
 }
