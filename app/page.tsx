@@ -1,128 +1,106 @@
 "use client";
-
+import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, Zap, Check, ArrowRight, Beaker, Menu, ShoppingCart } from 'lucide-react';
+import { Shield, Zap, CheckCircle, ArrowRight, Beaker, Droplets } from 'lucide-react';
 
 export default function Home() {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.8 }
-  };
-
   return (
-    <main className="relative">
-      {/* Header */}
-      <nav className="fixed top-0 w-full z-50 glass border-b border-slate-200">
+    <div className="min-h-screen">
+      {/* High-End Navigation */}
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="text-2xl font-black text-brand-blue flex items-center">
-            SHY<span className="text-brand-red">-</span>NM
+          <div className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <Shield className="text-white w-5 h-5" />
+            </div>
+            <span className="text-2xl font-black tracking-tighter text-slate-900">
+              SHY<span className="text-red-600">-</span>NM
+            </span>
           </div>
-          <div className="hidden md:flex space-x-8 font-semibold text-slate-600">
-            <a href="#science" className="hover:text-brand-blue transition-colors">Science</a>
-            <a href="#benefits" className="hover:text-brand-blue transition-colors">Benefits</a>
-            <a href="#usage" className="hover:text-brand-blue transition-colors">Usage</a>
-          </div>
-          <div className="flex items-center space-x-4">
-             <button className="p-2 hover:bg-slate-100 rounded-full transition-colors">
-                <ShoppingCart className="w-5 h-5 text-slate-600" />
-             </button>
-             <button className="bg-brand-blue text-white px-6 py-2.5 rounded-full font-bold shadow-lg shadow-blue-200 hover:bg-blue-700 transition-all active:scale-95">
-               Buy Now
-             </button>
-          </div>
+          <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 active:scale-95 shadow-lg shadow-blue-200">
+            Order Now
+          </button>
         </div>
       </nav>
 
-      {/* Hero */}
-      <section className="pt-40 pb-20 px-6">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6 overflow-hidden bg-gradient-to-b from-white to-blue-50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8 }}>
-            <h1 className="text-5xl md:text-7xl font-extrabold text-brand-dark leading-tight mb-6">
-              Instant Relief.<br/>
-              <span className="text-brand-blue">Permanent Shield.</span>
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-bold mb-6 uppercase tracking-widest">
+              <Droplets className="w-3 h-3" />
+              <span>Bio-Active Technology</span>
+            </div>
+            <h1 className="text-6xl lg:text-8xl font-black text-slate-900 leading-none mb-6">
+              Shield Your <br/>
+              <span className="text-blue-600">Sensitivity.</span>
             </h1>
-            <p className="text-xl text-slate-600 mb-8 max-w-lg">
-              Powered by CSPS technology to repair enamel and block tooth sensitivity at its microscopic source.
+            <p className="text-xl text-slate-600 mb-8 max-w-lg leading-relaxed">
+              Experience the microscopic repair of SHY-NM. We don't just mask the pain; we seal the source with clinical precision.
             </p>
-            <div className="flex space-x-4">
-              <button className="bg-brand-dark text-white px-8 py-4 rounded-2xl font-bold flex items-center group">
-                Shop Product <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <button className="bg-slate-900 text-white px-10 py-4 rounded-2xl font-bold text-lg flex items-center justify-center group hover:bg-slate-800 transition-all">
+                Get Started
+                <ArrowRight className="ml-2 group-hover:translate-x-2 transition-transform" />
               </button>
             </div>
           </motion.div>
 
+          {/* Abstract 3D Visual Replacement */}
           <motion.div 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
             className="relative flex justify-center"
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <div className="w-64 h-[450px] bg-gradient-to-tr from-brand-blue to-blue-400 rounded-2xl shadow-2xl flex items-center justify-center text-white font-bold rotate-3">
-              PRODUCT IMAGE
+            <div className="w-72 h-[450px] bg-white rounded-[3rem] shadow-2xl border-8 border-slate-50 flex flex-col items-center justify-center relative overflow-hidden">
+               <div className="absolute top-0 w-full h-32 bg-blue-600 flex items-center justify-center">
+                  <Shield className="text-white w-12 h-12 opacity-20" />
+               </div>
+               <div className="p-8 text-center pt-20">
+                  <div className="w-20 h-1 bg-red-500 mx-auto mb-4" />
+                  <p className="text-2xl font-black text-slate-800">SHY-NM</p>
+                  <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400 mt-2">Dentin Occlusion Paste</p>
+               </div>
+               {/* Animated Shield Aura */}
+               <motion.div 
+                animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.3, 0.1] }}
+                transition={{ duration: 4, repeat: Infinity }}
+                className="absolute inset-0 bg-blue-400 rounded-full blur-[80px] -z-10"
+               />
             </div>
-            <div className="absolute -z-10 w-80 h-80 bg-blue-100 rounded-full blur-3xl opacity-60"></div>
           </motion.div>
         </div>
       </section>
 
-      {/* Quick Stats */}
-      <section id="benefits" className="py-20 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-          {[
-            { icon: <Shield />, title: "Bio-Active Glass", desc: "Forms a tooth-like mineral layer over sensitive areas." },
-            { icon: <Zap />, title: "Long Lasting", desc: "Clinically proven to provide 24/7 protection with daily use." },
-            { icon: <Beaker />, title: "Non-Acidic", desc: "Gentle formula that strengthens rather than erodes." }
-          ].map((item, i) => (
-            <motion.div key={i} {...fadeIn} className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100">
-              <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-brand-blue mb-6">
-                {item.icon}
+      {/* Benefits Grid */}
+      <section className="py-24 bg-white px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12">
+            {[
+              { icon: <Shield className="w-8 h-8"/>, title: "Deep Seal", desc: "CSPS technology creates a Hydroxyapatite-like layer." },
+              { icon: <Zap className="w-8 h-8"/>, title: "Instant Action", desc: "Formulated for rapid relief from cold and heat triggers." },
+              { icon: <Beaker className="w-8 h-8"/>, title: "Clinical Grade", desc: "Recommended by leading dental professionals globally." }
+            ].map((item, i) => (
+              <div key={i} className="p-10 rounded-3xl bg-slate-50 hover:bg-white hover:shadow-2xl hover:shadow-blue-100 transition-all border border-slate-100 group">
+                <div className="text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                  {item.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{item.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{item.desc}</p>
               </div>
-              <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-              <p className="text-slate-600">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Usage Section (Dos and Don'ts) */}
-      <section id="usage" className="py-20 px-6">
-        <div className="max-w-4xl mx-auto bg-brand-dark rounded-[40px] p-12 text-white relative overflow-hidden">
-          <div className="relative z-10">
-            <h2 className="text-3xl font-bold mb-8 text-center">Mastering Sensitivity</h2>
-            <div className="grid md:grid-cols-2 gap-12">
-              <div>
-                <h4 className="text-brand-blue font-bold mb-4 uppercase tracking-wider">The "Dos"</h4>
-                <ul className="space-y-4">
-                  {['Use twice daily', 'Spit, do not rinse', 'Apply pea-sized amount'].map((t) => (
-                    <li key={t} className="flex items-center space-x-3">
-                      <div className="bg-green-500/20 p-1 rounded-full"><Check className="w-4 h-4 text-green-400" /></div>
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="opacity-60">
-                <h4 className="text-brand-red font-bold mb-4 uppercase tracking-wider">The "Don'ts"</h4>
-                <ul className="space-y-4">
-                  {['Avoid cold water right after', 'Do not swallow', 'Avoid acidic fruits'].map((t) => (
-                    <li key={t} className="flex items-center space-x-3">
-                      <div className="bg-red-500/20 p-1 rounded-full"><div className="w-4 h-4 border-2 border-red-400 rounded-full" /></div>
-                      <span>{t}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
-          <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 blur-[100px]"></div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-10 text-center text-slate-400 text-sm border-t border-slate-100">
-        © 2026 SHY-NM. All Rights Reserved. Shield Against Sensitivity.
+      <footer className="py-12 bg-slate-900 text-white text-center">
+        <p className="opacity-50 text-sm tracking-widest uppercase font-bold">SHY-NM REDESIGN 2026</p>
       </footer>
-    </main>
+    </div>
   );
 }
