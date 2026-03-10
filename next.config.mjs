@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/SHY-NM', // This MUST match your repo name exactly
+  // This tells Next.js that the site is in a subfolder named /SHY-NM
+  basePath: '/SHY-NM', 
   images: {
     unoptimized: true,
   },
