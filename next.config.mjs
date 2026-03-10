@@ -1,8 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/SHY-NM', 
-  // REMOVED assetPrefix: '/SHY-NM'
+  basePath: '/SHY-NM',
   images: {
     unoptimized: true,
   },
