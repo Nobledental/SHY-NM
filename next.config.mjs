@@ -1,11 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Required for the "./out" path in your YAML
+  output: 'export',
+  basePath: '/SHY-NM', // This MUST match your repo name exactly
   images: {
-    unoptimized: true, // Required for static hosting
+    unoptimized: true,
   },
-  // If your repo is "shynm-redesign", add:
-  // basePath: '/shynm-redesign', 
 };
 
 export default nextConfig;
